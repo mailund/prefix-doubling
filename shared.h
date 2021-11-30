@@ -19,14 +19,10 @@ void *abort_malloc(size_t size);
 
 // Get the rank from array rank, but if you index beyond the end,
 // you get the sentinel letter 0.
-static inline uint32_t get_rank(uint32_t n, uint32_t const rank[n], int i)
+static inline uint32_t get_rank(uint32_t n, uint32_t const rank[n], uint32_t i)
 {
     return (i < n) ? rank[i] : 0;
 }
-
-// maps the letters in x to integers in the range [0, ..., sigma - 1]
-// Stores the length of n in *n and the alphabet size in *sigma.
-uint32_t *remap(char const *x, uint32_t *n, uint32_t *sigma);
 
 // Fills sa with indices 0, 1, 2, ..., n - 1
 void fill_indices(uint32_t n, uint32_t sa[n]);
@@ -39,9 +35,7 @@ void random_string(uint32_t n, char x[n + 1]);
 void assert_sa_sorted(uint32_t n, char const x[n], uint32_t const sa[n]);
 
 typedef void (*construction_func)(uint32_t n, char const x[n], uint32_t sa[n]);
-clock_t time_construction(
-    construction_func f,
-    uint32_t n, char const x[n], uint32_t sa[n]);
+clock_t time_construction(construction_func f, uint32_t n, char const x[n], uint32_t sa[n]);
 
 void performance_measurements(int no_funcs,
                               char const *func_names[no_funcs],

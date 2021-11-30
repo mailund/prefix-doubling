@@ -67,9 +67,7 @@ void assert_sa_sorted(uint32_t n, char const x[n], uint32_t const sa[n])
     }
 }
 
-clock_t time_construction(
-    construction_func f,
-    uint32_t n, char const x[n], uint32_t sa[n])
+clock_t time_construction(construction_func f, uint32_t n, char const x[n], uint32_t sa[n])
 {
     // Time suffix array construction.
     clock_t then = clock();

@@ -11,7 +11,7 @@
 // (with padded zero sentinels). The result goes to out.
 static void bsort(uint32_t n,
                   uint32_t const sa[n],
-                  uint32_t rank[n],
+                  uint32_t const rank[n],
                   uint32_t out[n],
                   uint32_t k,
                   uint32_t buckets[n],
