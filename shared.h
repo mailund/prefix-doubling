@@ -29,16 +29,16 @@ void fill_indices(uint32_t n, uint32_t sa[n]);
 
 // Computes the initial rank of x, r0, from the first character in
 // each suffix. Returns the number of distinct characters in x.
-uint32_t calc_rank0(uint32_t n, char const x[n], uint32_t r0[n]);
+uint32_t calc_rank0(uint32_t n, char const x[n], uint32_t r0[n]); // FlawFinder: ignore (x[n] is fine)
 
-void random_string(uint32_t n, char x[n + 1]);
-void assert_sa_sorted(uint32_t n, char const x[n], uint32_t const sa[n]);
+void random_string(uint32_t n, char x[n + 1]);                            // FlawFinder: ignore (x[n] is fine)
+void assert_sa_sorted(uint32_t n, char const x[n], uint32_t const sa[n]); // FlawFinder: ignore (x[n] is fine)
 
-typedef void (*construction_func)(uint32_t n, char const x[n], uint32_t sa[n]);
-clock_t time_construction(construction_func f, uint32_t n, char const x[n], uint32_t sa[n]);
+typedef void (*construction_func)(uint32_t n, char const x[n], uint32_t sa[n]);              // FlawFinder: ignore (x[n] is fine)
+clock_t time_construction(construction_func f, uint32_t n, char const x[n], uint32_t sa[n]); // FlawFinder: ignore (x[n] is fine)
 
 void performance_measurements(int no_funcs,
-                              char const *func_names[no_funcs],
+                              char const *func_names[no_funcs], // FlawFinder: ignore (fixed length buffer is fine here)
                               construction_func funcs[no_funcs],
                               uint32_t n, int reps);
 

@@ -22,7 +22,7 @@ void fill_indices(uint32_t n, uint32_t sa[n])
         sa[i] = i;
 }
 
-uint32_t calc_rank0(uint32_t n, char const x[n], uint32_t r0[n])
+uint32_t calc_rank0(uint32_t n, char const x[n], uint32_t r0[n]) // FlawFinder: ignore (x[n] is fine)
 {
     uint32_t alphabet[NO_CHARS] = {0};
 
@@ -45,7 +45,7 @@ uint32_t calc_rank0(uint32_t n, char const x[n], uint32_t r0[n])
     return sigma;
 }
 
-void random_string(uint32_t n, char x[n + 1])
+void random_string(uint32_t n, char x[n + 1]) // FlawFinder: ignore (x[n] is fine)
 {
     static char alphabet[] = "abcdefg";
     static char sigma = sizeof alphabet - 1; // we don't want '\0'
@@ -54,7 +54,7 @@ void random_string(uint32_t n, char x[n + 1])
     x[n] = '\0';
 }
 
-void assert_sa_sorted(uint32_t n, char const x[n], uint32_t const sa[n])
+void assert_sa_sorted(uint32_t n, char const x[n], uint32_t const sa[n]) // FlawFinder: ignore (x[n] is fine)
 {
     for (uint32_t i = 1; i < n; i++)
     {
@@ -67,7 +67,7 @@ void assert_sa_sorted(uint32_t n, char const x[n], uint32_t const sa[n])
     }
 }
 
-clock_t time_construction(construction_func f, uint32_t n, char const x[n], uint32_t sa[n])
+clock_t time_construction(construction_func f, uint32_t n, char const x[n], uint32_t sa[n]) // FlawFinder: ignore (x[n] is fine)
 {
     // Time suffix array construction.
     clock_t then = clock();
@@ -81,7 +81,7 @@ clock_t time_construction(construction_func f, uint32_t n, char const x[n], uint
 }
 
 void performance_measurements(int no_funcs,
-                              char const *func_names[no_funcs],
+                              char const *func_names[no_funcs], // FlawFinder: ignore (fixed length is fine)
                               construction_func funcs[no_funcs],
                               uint32_t n, int reps)
 {

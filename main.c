@@ -2,6 +2,7 @@
 
 #include "pd-1.h"
 #include "pd-2.h"
+#include "pd-3.h"
 #include "shared.h"
 
 int main(void)
@@ -12,8 +13,8 @@ int main(void)
 
     random_string(n, x);
 
-    char const *func_names[] = {"pd1", "pd2"};
-    construction_func funcs[] = {pd1, pd2};
+    char const *func_names[] = {"pd1", "pd2", "pd3"};
+    construction_func funcs[] = {pd1, pd2, pd3};
     int no_funcs = sizeof func_names / sizeof *func_names;
     performance_measurements(no_funcs,
                              func_names,

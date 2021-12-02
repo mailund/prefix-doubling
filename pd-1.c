@@ -68,7 +68,7 @@ static uint32_t update_rank(uint32_t n,
 }
 
 // Construct a suffix array using prefix-doubling
-void pd1(uint32_t n, char const x[n], uint32_t sa[n])
+void pd1(uint32_t n, char const x[n], uint32_t sa[n]) // FlawFinder: ignore (x[n] is fine)
 {
     uint32_t *buckets = abort_malloc(n * sizeof *buckets);
     uint32_t *buf = abort_malloc(n * sizeof *buf);

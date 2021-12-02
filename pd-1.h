@@ -3,6 +3,6 @@
 
 #include <stdint.h>
 
-void pd1(uint32_t n, char const x[n], uint32_t sa[n]);
+void pd1(uint32_t n, char const x[n], uint32_t sa[n]); // FlawFinder: ignore (x[n] is fine)
 
 #endif
